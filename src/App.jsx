@@ -13,9 +13,6 @@ import Contact from "./contact";
 import Error from "./error";
 
 function App() {
-  const rootElement = document.getElementById("root");
-  const root = createRoot(rootElement);
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -36,7 +33,7 @@ function App() {
     },
   ]);
 
-  root.render(
+  return (
     <StrictMode>
       <Navbar />
       <RouterProvider router={router} />
