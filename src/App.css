@@ -36,13 +36,13 @@
 
 h1 {
   color: #61b390;
-  font-family: allerbold;
+  font-family: "allerbold";
   font-size: 3vw;
   text-align: center;
 }
 h2 {
   color: #61b390;
-  font-family: allerbold;
+  font-family: "allerbold";
   font-size: 2vw;
 }
 nav {
@@ -59,7 +59,7 @@ nav ul {
   list-style: none;
 }
 nav a {
-  font-family: caviar_dreamsregular;
+  font-family: "caviar_dreamsregular";
   color: #e1eacd;
   text-decoration: none;
   padding: 0.5em 1em;
@@ -71,7 +71,7 @@ a:hover {
 }
 p {
   color: #0c302a;
-  font-family: caviar_dreamsregular;
+  font-family: "caviar_dreamsregular";
 }
 .text1 {
   text-align: center;
@@ -89,7 +89,7 @@ img {
 
 div {
   color: #bad8b6;
-  font-family: caviar_dreamsregular;
+  font-family: "caviar_dreamsregular";
   font-size: 1.5vw;
   text-align: center;
 }
