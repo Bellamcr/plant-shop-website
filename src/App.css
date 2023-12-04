@@ -1,9 +1,9 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
+} */
 
 /* .logo {
   height: 6em;
@@ -40,3 +40,90 @@
 .read-the-docs {
   color: #888;
 } */
+@font-face {
+  font-family: "caviar_dreamsregular";
+  src:
+    url("caviardreams-webfont.woff2") format("woff2"),
+    url("caviardreams-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "allerbold";
+  src:
+    url("aller_bd-webfont.woff2") format("woff2"),
+    url("aller_bd-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+h1 {
+  color: #61b390;
+  font-family: allerbold;
+  font-size: 4vw;
+  text-align: center;
+}
+h2 {
+  color: #61b390;
+  font-family: allerbold;
+  font-size: 2vw;
+}
+nav {
+  background-color: #01352c;
+  padding: 0.5em;
+  position: sticky;
+  top: 0;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav a {
+  font-family: caviar_dreamsregular;
+  color: #e1eacd;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  font-size: 1.5vw;
+}
+p {
+  color: #01352c;
+  font-family: caviar_dreamsregular;
+}
+.text1 {
+  text-align: center;
+  font-size: 1.5vw;
+}
+.text2 {
+  font-size: 1vw;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  opacity: 0.5;
+}
+
+div {
+  color: #bad8b6;
+  font-family: caviar_dreamsregular;
+  font-size: 1.5vw;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+}
+
+.phototext {
+  color: #01352c;
+  font-size: 3vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #01352c;
+  padding: 10px;
+  border-radius: 30px;
+}

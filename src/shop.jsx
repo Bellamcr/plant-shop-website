@@ -6,7 +6,7 @@ export default function Shop() {
         <div className="card">
           <img
             className="card_img"
-            src="hinese-evergreen.jpg"
+            src="chineseevergreen.jpeg"
             alt="Chinese Evergreen"
           />
           <h2>Chinese Evergreen</h2>
@@ -18,7 +18,7 @@ export default function Shop() {
         <div className="card">
           <img
             className="card_img"
-            src="hinese-evergreen.jpg"
+            src="chineseevergreen.jpeg"
             alt="Chinese Evergreen"
           />
           <h2>Chinese Evergreen</h2>
@@ -30,7 +30,7 @@ export default function Shop() {
         <div className="card">
           <img
             className="card_img"
-            src="hinese-evergreen.jpg"
+            src="chineseevergreen.jpeg"
             alt="Chinese Evergreen"
           />
           <h2>Chinese Evergreen</h2>
