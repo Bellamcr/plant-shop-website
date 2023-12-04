@@ -1,10 +1,8 @@
-import "./App.css";
 import "./home.css";
 
 export default function Home() {
   return (
     <>
-      <h1> Green house </h1>
       <div className="grid">
         <div className="container">
           <img src="greenhouse.jpg" alt="plants" class="photo1" />

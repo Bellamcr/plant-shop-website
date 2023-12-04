@@ -1,5 +1,7 @@
 export default function Navbar() {
-    return (
+  return (
+    <>
+      <h1> Green house </h1>
       <nav>
         <ul>
           <li>
@@ -16,5 +18,6 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
-    );
-  }
+    </>
+  );
+}
