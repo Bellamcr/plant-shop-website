@@ -34,26 +34,10 @@
   color: #888;
 } */
 
-@font-face {
-  font-family: "caviar_dreamsregular";
-  src:
-    url("caviardreams-webfont.woff2") format("woff2"),
-    url("caviardreams-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "allerbold";
-  src:
-    url("aller_bd-webfont.woff2") format("woff2"),
-    url("aller_bd-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
 h1 {
   color: #61b390;
   font-family: allerbold;
-  font-size: 4vw;
+  font-size: 3vw;
   text-align: center;
 }
 h2 {
@@ -86,7 +70,7 @@ a:hover {
   background: #e1eacd;
 }
 p {
-  color: #01352c;
+  color: #0c302a;
   font-family: caviar_dreamsregular;
 }
 .text1 {

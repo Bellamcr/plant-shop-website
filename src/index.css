@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "caviar_dreamsregular";
+  src: url("caviardreams-webfont.woff2") format("woff2"),
+    url("caviardreams-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "allerbold";
+  src: url("aller_bd-webfont.woff2") format("woff2"),
+    url("aller_bd-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: auto;
 }
@@ -18,20 +33,6 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -44,7 +45,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #e1eacd;
 }
 button:focus,
 button:focus-visible {
@@ -57,9 +58,9 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #01352c;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #e1eacd;
   }
 }
