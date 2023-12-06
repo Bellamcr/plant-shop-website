@@ -1,7 +1,5 @@
 import { StrictMode } from "react";
-// import { useState, useEffect } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "./navbar";
 import Home from "./home";

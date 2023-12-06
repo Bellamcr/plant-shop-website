@@ -8,7 +8,7 @@ import './fonts/caviardreams-webfont.woff'
 import './fonts/caviardreams-webfont.woff2'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  // </React.StrictMode>,
 )
