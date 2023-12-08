@@ -15,7 +15,7 @@
 } */
  
 /* navbar */
-.navbox{
+/* .navbox{
   width: 100%;
   height: auto;
   border-bottom: 1px solid #e4e4e4;
@@ -24,7 +24,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 7px 25px;
-}
+} */
 
 .navbox .leftside{
   width: 80px;

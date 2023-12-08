@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import "./css/App.css";
 import { useState, useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "./components/navbar";
@@ -7,34 +7,55 @@ import Shop from "./components/shop";
 import About from "./components/about";
 import Contact from "./components/contact";
 import Error from "./components/error";
-import "./css/App.css";
 
 function App() {
+  const [auth, setAuth] = useState(null);
+
+  useEffect(() => {
+    console.log(auth);
+  }, [auth]);
+
   const router = createBrowserRouter([
     {
-      path: "/",
-      element: <Home />,
-      errorElement: <Error />,
+      path: "/login",
+      element: <Login />, 
+      errorElement: <Error />
     },
     {
-      path: "/shop",
-      element: <Shop />,
+      path: "/signup",
+      element: <Signup />,
     },
     {
-      path: "/about",
-      element: <About />,
-    },
-    {
-      path: "/contact",
-      element: <Contact />,
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+          errorElement: <Error />,
+        },
+        {
+          path: "/shop",
+          element: <Shop />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+      ],
     },
   ]);
 
   return (
     // <StrictMode>
     <>
-      <Navbar />
-      <RouterProvider router={router} />
+      {/* <Navbar /> */}
+      <AuthProvider {...{ auth, setAuth }}>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </>
     // </StrictMode>
   );
