@@ -1,13 +1,13 @@
 import { StrictMode } from "react";
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Navbar from "./navbar";
-import Home from "./home";
-import Shop from "./shop";
-import About from "./about";
-import Contact from "./contact";
-import Error from "./error";
-import "./App.css";
+import Navbar from "./components/navbar";
+import Home from "./components/home";
+import Shop from "./components/shop";
+import About from "./components/about";
+import Contact from "./components/contact";
+import Error from "./components/error";
+import "./css/App.css";
 
 function App() {
   const router = createBrowserRouter([
@@ -31,10 +31,12 @@ function App() {
   ]);
 
   return (
-    <StrictMode>
+    // <StrictMode>
+    <>
       <Navbar />
       <RouterProvider router={router} />
-    </StrictMode>
+    </>
+    // </StrictMode>
   );
 }
 

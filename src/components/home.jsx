@@ -1,11 +1,11 @@
-import "./home.css";
+import "../css/home.css";
 
 export default function Home() {
   return (
     <>
       <div className="grid">
         <div className="container">
-          <img src="greenhouse.jpg" alt="plants" class="photo1" />
+          {/* <img src="greenhouse.jpg" alt="plants" class="photo1" /> */}
           <p className="phototext">Find the right plant for you!</p>
         </div>
         <p className="text1">
