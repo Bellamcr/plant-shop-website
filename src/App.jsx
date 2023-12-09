@@ -1,6 +1,10 @@
 import "./css/App.css";
 import { useState, useEffect } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
+import Layout from "./layout";
+import Signup from "./signup";
+import Login from "./login";
+import AuthProvider from "./AuthContext";
 import Navbar from "./components/navbar";
 import Home from "./components/home";
 import Shop from "./components/shop";
@@ -50,14 +54,14 @@ function App() {
   ]);
 
   return (
-    // <StrictMode>
+    <StrictMode>
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <AuthProvider {...{ auth, setAuth }}>
-        <RouterProvider router={router} />
+      <RouterProvider router={router} />
       </AuthProvider>
     </>
-    // </StrictMode>
+   </StrictMode>
   );
 }
 
