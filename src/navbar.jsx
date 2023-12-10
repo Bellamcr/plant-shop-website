@@ -1,4 +1,4 @@
-import logo from "../images/plants.png";
+import logo from "./images/plants.png";
 import { useContext } from "react";
 import { signOut } from "firebase/auth";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -19,19 +19,19 @@ export default function Navbar() {
         console.log(error);
       });
   };
-  
+
   return (
-    <>
+    <div className="navbox">
       <h1> Green house </h1>
       <div className="leftside">
         <img src={logo} alt="Green House Logo" />
       </div>
       <div className="rightside">
         {auth && auth.currentUser ? (
-        <button onClick={handleLogout}> Logout </button>
-      ) : (
-        <button onClick={() => navigate("/login")}> Login </button>
-      )}
+          <button onClick={handleLogout}> Logout </button>
+        ) : (
+          <button onClick={() => navigate("/login")}> Login </button>
+        )}
         <button onClick={() => navigate("/signup")}> Sign up </button>
       </div>
       <div className="navbar">
@@ -42,7 +42,6 @@ export default function Navbar() {
           <NavLink to="/contact">CONTACT</NavLink>
         </nav>
       </div>
-      
-    </>
+    </div>
   );
 }

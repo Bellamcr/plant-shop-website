@@ -1,3 +1,5 @@
+import "./css/shop.css";
+
 export default function Shop() {
   return (
     <>

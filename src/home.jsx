@@ -1,4 +1,4 @@
-import "../css/home.css";
+import "./css/home.css";
 import { AuthContext } from "./AuthContext";
 import { useContext } from "react";
 

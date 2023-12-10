@@ -5,12 +5,11 @@ import Layout from "./layout";
 import Signup from "./signup";
 import Login from "./login";
 import AuthProvider from "./AuthContext";
-import Navbar from "./components/navbar";
-import Home from "./components/home";
-import Shop from "./components/shop";
-import About from "./components/about";
-import Contact from "./components/contact";
-import Error from "./components/error";
+import Home from "./home";
+import Shop from "./shop";
+import About from "./about";
+import Contact from "./contact";
+import Error from "./error";
 
 function App() {
   const [auth, setAuth] = useState(null);
@@ -22,8 +21,8 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/login",
-      element: <Login />, 
-      errorElement: <Error />
+      element: <Login />,
+      errorElement: <Error />,
     },
     {
       path: "/signup",
@@ -54,14 +53,11 @@ function App() {
   ]);
 
   return (
-    
     <>
-      <Navbar />
       <AuthProvider {...{ auth, setAuth }}>
-      <RouterProvider router={router} />
+        <RouterProvider router={router} />
       </AuthProvider>
     </>
-  
   );
 }
 
