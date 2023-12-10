@@ -21,27 +21,29 @@ export default function Navbar() {
   };
 
   return (
-    <div className="navbox">
-      <h1> Green house </h1>
-      <div className="leftside">
-        <img src={logo} alt="Green House Logo" />
+    <div>
+      <div className="header">
+        <div className="leftside">
+          <img className="logo" src={logo} alt="Green House Logo" />
+        </div>
+        <h1 className="headertext"> Green House </h1>
+        <div className="rightside">
+          {auth && auth.currentUser ? (
+            <button onClick={handleLogout}> Logout </button>
+          ) : (
+            <button onClick={() => navigate("/login")}> Login </button>
+          )}
+          <button onClick={() => navigate("/signup")}> Sign up </button>
+        </div>
       </div>
-      <div className="rightside">
-        {auth && auth.currentUser ? (
-          <button onClick={handleLogout}> Logout </button>
-        ) : (
-          <button onClick={() => navigate("/login")}> Login </button>
-        )}
-        <button onClick={() => navigate("/signup")}> Sign up </button>
-      </div>
-      <div className="navbar">
-        <nav>
+      <nav className="navbar">
+        <ul>
           <NavLink to="/">HOME</NavLink>
           <NavLink to="/shop">SHOP</NavLink>
           <NavLink to="/about">ABOUT</NavLink>
           <NavLink to="/contact">CONTACT</NavLink>
-        </nav>
-      </div>
+        </ul>
+      </nav>
     </div>
   );
 }
