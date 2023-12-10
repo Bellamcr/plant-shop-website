@@ -1,6 +1,6 @@
 import "./css/App.css";
 import { useState, useEffect } from "react";
-import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layout";
 import Signup from "./signup";
 import Login from "./login";
@@ -54,14 +54,14 @@ function App() {
   ]);
 
   return (
-    <StrictMode>
+    
     <>
       <Navbar />
       <AuthProvider {...{ auth, setAuth }}>
       <RouterProvider router={router} />
       </AuthProvider>
     </>
-   </StrictMode>
+  
   );
 }
 

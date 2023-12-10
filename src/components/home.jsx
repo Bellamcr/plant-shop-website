@@ -1,11 +1,13 @@
 import "../css/home.css";
-import { Link } from "react-router-dom";
+import { AuthContext } from "./AuthContext";
+import { useContext } from "react";
 
 export default function Home() {
+  const auth = useContext(AuthContext);
+  
   return (
     <>
       <div className="grid">
-        <Link to="/login">Login</Link>
         <div className="container">
           {/* <img src="greenhouse.jpg" alt="plants" class="photo1" /> */}
           <p className="phototext">Find the right plant for you!</p>
