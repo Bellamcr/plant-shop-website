@@ -1,4 +1,5 @@
 import "./css/shop.css";
+import chineseevergreen from "./images/chineseevergreen.jpg";
 
 export default function Shop() {
   return (
@@ -8,7 +9,7 @@ export default function Shop() {
         <div className="card">
           <img
             className="card_img"
-            src="chineseevergreen.jpeg"
+            src={chineseevergreen}
             alt="Chinese Evergreen"
           />
           <h2>Chinese Evergreen</h2>
@@ -18,9 +19,9 @@ export default function Shop() {
           </p>
         </div>
         <div className="card">
-          <img
+        <img
             className="card_img"
-            src="chineseevergreen.jpeg"
+            src={chineseevergreen}
             alt="Chinese Evergreen"
           />
           <h2>Chinese Evergreen</h2>
@@ -30,9 +31,9 @@ export default function Shop() {
           </p>
         </div>
         <div className="card">
-          <img
+        <img
             className="card_img"
-            src="chineseevergreen.jpeg"
+            src={chineseevergreen}
             alt="Chinese Evergreen"
           />
           <h2>Chinese Evergreen</h2>

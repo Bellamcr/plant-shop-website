@@ -1,8 +1,8 @@
-/* .container {
+.grid .container {
   position: relative;
 }
 
-.phototext {
+.grid .photobutton {
   color: #01352c;
   font-size: 3vw;
   position: absolute;
@@ -12,20 +12,20 @@
   border: 2px solid #01352c;
   padding: 10px;
   border-radius: 30px;
-} */
- 
-/* .container {
-  position: relative;
-} */
+  background-color: transparent ;
+}
+.grid img {
+  
+  width: 100%;
+  height: auto;
+  opacity: 0.5;
 
-.phototext {
-  color: #01352c;
-  font-size: 3vw;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 2px solid #01352c;
-  padding: 10px;
-  border-radius: 30px;
+}
+
+/* .text1 {
+  text-align: center;
+  font-size: 1.5vw;
+}
+.text2 {
+  font-size: 1vw;
 }

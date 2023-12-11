@@ -24,7 +24,7 @@ export default function Navbar() {
     <div>
       <div className="header">
         <div className="leftside">
-          <img className="logo" src={logo} alt="Green House Logo" />
+          <img className="logo" src={logo} alt="Green House Logo" onClick={() => navigate("/")} />
         </div>
         <h1 className="headertext"> Green House </h1>
         <div className="rightside">
@@ -47,3 +47,6 @@ export default function Navbar() {
     </div>
   );
 }
+
+
+
