@@ -6,6 +6,7 @@ import "./fonts/aller_bd-webfont.woff";
 import "./fonts/aller_bd-webfont.woff2";
 import "./fonts/caviardreams-webfont.woff";
 import "./fonts/caviardreams-webfont.woff2";
+// import "bootstrap/dist/css/bootstrap.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
