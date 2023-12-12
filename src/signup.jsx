@@ -37,8 +37,8 @@ const Signup = () => {
           <div>
             <h1>Sign Up</h1>
             <form>
-              <div>
-                <label htmlFor="email-address">Email address</label>
+              <div className="email">
+                <label htmlFor="email-address">Email address: </label>
                 <input
                   type="email"
                   label="Email address"
@@ -48,9 +48,9 @@ const Signup = () => {
                   placeholder="Email address"
                 />
               </div>
-
-              <div>
-                <label htmlFor="password">Password</label>
+              
+              <div className="password">
+                <label htmlFor="password">Password: </label>
                 <input
                   type="password"
                   label="Create password"
@@ -60,13 +60,12 @@ const Signup = () => {
                   placeholder="Password"
                 />
               </div>
-
-              <button type="submit" onClick={onSubmit}>
-                Sign up
-              </button>
+              <br />
+              <div className="container-btn">
+                <button className="btn-auth" type="submit" onClick={onSubmit}>Sign up</button>
+              </div>
             </form>
-
-            <p>
+            <p className="text-signup">
               Already have an account? <NavLink to="/login">Sign in</NavLink>
             </p>
           </div>

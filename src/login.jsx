@@ -34,8 +34,8 @@ const Login = () => {
             <h1>Login</h1>
 
             <form>
-              <div>
-                <label htmlFor="email-address">Email address</label>
+              <div className="email">
+                <label htmlFor="email-address">Email address: </label>
                 <input
                   id="email-address"
                   name="email"
@@ -45,9 +45,8 @@ const Login = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-
-              <div>
-                <label htmlFor="password">Password</label>
+              <div className="password">
+                <label htmlFor="password">Password: </label>
                 <input
                   id="password"
                   name="password"
@@ -57,13 +56,12 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-
-              <div>
-                <button onClick={onLogin}>Login</button>
+              <br />
+              <div className="container-btn">
+                <button className="btn-auth" onClick={onLogin}>Login</button>
               </div>
             </form>
-
-            <p className="text-sm text-white text-center">
+            <p className="text-login">
               No account yet? <NavLink to="/signup">Sign up</NavLink>
             </p>
           </div>
