@@ -9,6 +9,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState('');
 
   const onLogin = (e) => {
     e.preventDefault();
@@ -20,12 +21,7 @@ const Login = () => {
         const user = userCredential.user;
         navigate("/");
         console.log(user.id);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-      });
+      }).catch(err => setError(err.message));
   };
 
   return (
@@ -65,6 +61,8 @@ const Login = () => {
             </button>
           </div>
         </form>
+        {error && <span className='error-msg'>{error}</span>}
+            <br/>
         <p className="text-login">
           No account yet? <NavLink to="/signup">Sign up</NavLink>
         </p>

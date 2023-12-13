@@ -1,4 +1,5 @@
 import logo from "./images/plants.png";
+import cart from "./images/shopping-cart.png"
 import { useContext } from "react";
 import { signOut } from "firebase/auth";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -29,11 +30,17 @@ export default function Navbar() {
         <h1 className="headertext"> Green House </h1>
         <div className="rightside">
           {auth && auth.currentUser ? (
-            <button onClick={handleLogout}> Logout </button>
+            <>
+            <img className="cart" title="ShoppingCart" src={cart} alt="Shopping Cart" />
+            {/* onClick={() => navigate("/cartproduct")} */}
+            <button className="btn-logout" onClick={handleLogout}> Logout </button>
+            </>
           ) : (
+            <>
             <button onClick={() => navigate("/login")}> Login </button>
-          )}
-          <button onClick={() => navigate("/signup")}> Sign up </button>
+            <button onClick={() => navigate("/signup")}> Sign up </button>
+            </>            
+          )}          
         </div>
       </div>
       <nav className="navbar">
