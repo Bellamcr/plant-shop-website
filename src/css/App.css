@@ -11,7 +11,7 @@ h2 {
 }
 
 /* header */
-.header{
+.header {
   width: 100%;
   height: auto;
   display: flex;
@@ -19,11 +19,11 @@ h2 {
   justify-content: space-between;
   align-items: center;
 }
-.header .headertext{
+.header .headertext {
   align-items: center;
 }
 
-.header .leftside{
+.header .leftside {
   padding: 10px 0 10px 30px;
   width: 90px;
   height: 80px;
@@ -39,30 +39,29 @@ h2 {
   filter: drop-shadow(0 0 2em #35b97380);
 }
 
-.header .rigthside{
+.header .rigthside {
   display: flex;
   flex-direction: row;
   font-size: 12px;
   color: #000;
   font-weight: 600;
   margin: auto 10px;
-
 }
 
 /* navbar */
-.navbar{
+.navbar {
   background-color: #01352c;
   padding: 0px;
   text-align: center;
   width: 100%;
 }
-.navbar ul{
+.navbar ul {
   position: sticky;
   top: 0;
   margin-bottom: 0px;
   margin-top: 0px;
 }
-.navbar a{
+.navbar a {
   font-family: "caviar_dreamsregular" sans-serif;
   color: #e1eacd;
   text-decoration: none;
@@ -82,7 +81,7 @@ button {
   padding: 0.4em 1em;
   font-size: 1em;
   font-weight: 500;
-  font-family:  "caviar_dreamsregular" sans-serif;
+  font-family: "caviar_dreamsregular" sans-serif;
   color: #0c302a;
   background-color: #bad8b6;
   cursor: pointer;
@@ -121,8 +120,6 @@ p {
   text-align: center;
 } */
 
-
-
 /* 
 .card {
   padding: 2em;
@@ -133,32 +130,41 @@ p {
 } */
 
 /* login and signup */
-.email{
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.form-text {
   color: #0c302a;
   font-family: "caviar_dreamsregular" sans-serif;
   font-size: 1.5vw;
   text-align: center;
 }
-.password{
-  color: #0c302a;
-  font-family: "caviar_dreamsregular" sans-serif;
-  font-size: 1.5vw;
-  text-align: center;
-}
-.container-btn{
+
+.container-btn {
   height: 40px;
   position: relative;
- 
 }
-.btn-auth{
+.btn-auth {
   color: #0c302a;
   font-family: "caviar_dreamsregular" sans-serif;
-  padding: 0.2em 2em;
-  font-size: 1.5vw;
+  padding: 0.5em 2em;
+  font-size: 1vw;
   margin: 0;
   position: absolute;
   top: 20%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .mybtn {
+    width: 50%;
+  }
 }

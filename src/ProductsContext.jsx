@@ -4,13 +4,13 @@ import { firestore } from 'firebase/firestore';
 export const ProductsContext = createContext();
 
 export class ProductsContextProvider extends React.Component {
-
+    // defining an inntial state with an empty array of products
     state = {
         products: []
     }
 
     componentDidMount() {
-
+        //copy of  the state and retrieve products and push to arrray
         const prevProducts = this.state.products;
         firestore.collection('Products').onSnapshot(snapshot => {
             let changes = snapshot.docChanges();
@@ -23,6 +23,7 @@ export class ProductsContextProvider extends React.Component {
                         ProductImg: change.doc.data().ProductImg
                     })
                 }
+                // update the statment
                 this.setState({
                     products: prevProducts
                 })
@@ -38,3 +39,5 @@ export class ProductsContextProvider extends React.Component {
         )
     }
 }
+
+// look his app.js

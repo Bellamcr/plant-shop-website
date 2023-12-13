@@ -14,9 +14,11 @@ const Login = () => {
     e.preventDefault();
     signInWithEmailAndPassword(firebaseAuth, email, password)
       .then((userCredential) => {
+        setEmail('');
+        setPassword('');
         // Signed in
         const user = userCredential.user;
-        navigate(-1) || navigate("/");
+        navigate("/");
         console.log(user.id);
       })
       .catch((error) => {
@@ -28,45 +30,45 @@ const Login = () => {
 
   return (
     <>
-      <main>
-        <section>
-          <div>
-            <h1>Login</h1>
-
-            <form>
-              <div className="email">
-                <label htmlFor="email-address">Email address: </label>
-                <input
-                  id="email-address"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="Email address"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="password">
-                <label htmlFor="password">Password: </label>
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  required
-                  placeholder="Password"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-              <br />
-              <div className="container-btn">
-                <button className="btn-auth" onClick={onLogin}>Login</button>
-              </div>
-            </form>
-            <p className="text-login">
-              No account yet? <NavLink to="/signup">Sign up</NavLink>
-            </p>
+      <div className="auth-container">
+        <h2>Login</h2>
+        <br />
+        <form className="form-auth">
+          <div className="form-text">
+            <label htmlFor="email-address">Email address: </label>
+            <input
+              id="email-address"
+              name="email"
+              type="email"
+              value={email}
+              required
+              placeholder="Email address"
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
-        </section>
-      </main>
+          <div className="form-text">
+            <label htmlFor="password">Password: </label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              value={password}
+              required
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <br />
+          <div className="container-btn">
+            <button className="btn-auth mybtn" onClick={onLogin}>
+              LOGIN
+            </button>
+          </div>
+        </form>
+        <p className="text-login">
+          No account yet? <NavLink to="/signup">Sign up</NavLink>
+        </p>
+      </div>
     </>
   );
 };
