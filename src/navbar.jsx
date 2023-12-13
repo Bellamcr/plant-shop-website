@@ -33,7 +33,7 @@ export default function Navbar() {
             <>
             <img className="cart" title="ShoppingCart" src={cart} alt="Shopping Cart" />
             {/* onClick={() => navigate("/cartproduct")} */}
-            <button className="btn-logout" onClick={handleLogout}> Logout </button>
+            <button onClick={handleLogout}> Logout </button>
             </>
           ) : (
             <>
