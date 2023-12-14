@@ -2,14 +2,14 @@ import "./css/App.css";
 import { useState, useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layout";
-import Signup from "./signup";
-import Login from "./login";
+import Signup from "./components/signup";
+import Login from "./components/login";
 import AuthProvider from "./AuthContext";
-import Home from "./home";
-import Shop from "./shop";
-import About from "./about";
-import Contact from "./contact";
-import Error from "./error";
+import Home from "./components/home";
+import Shop from "./components/shop";
+import About from "./components/about";
+import Contact from "./components/contact";
+import Error from "./components/error";
 
 function App() {
   const [auth, setAuth] = useState(null);

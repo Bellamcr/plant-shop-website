@@ -1,5 +1,5 @@
-import "./css/shop.css";
-import chineseevergreen from "./images/chineseevergreen.jpg";
+import "../css/shop.css";
+import chineseevergreen from "../images/chineseevergreen.jpg";
 
 export default function Shop() {
   return (

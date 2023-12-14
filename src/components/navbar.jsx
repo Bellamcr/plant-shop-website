@@ -1,9 +1,9 @@
-import logo from "./images/plants.png";
-import cart from "./images/shopping-cart.png"
+import logo from "../images/plants.png";
+import cart from "../images/shopping-cart.png"
 import { useContext } from "react";
-import { signOut } from "firebase/auth";
+import { signOut } from 'firebase/auth';
 import { NavLink, useNavigate } from "react-router-dom";
-import { AuthContext } from "./AuthContext";
+import { AuthContext } from "../AuthContext";
 
 export default function Navbar() {
   const navigate = useNavigate();

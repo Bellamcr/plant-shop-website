@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { firebaseAuth, firestore } from "./firebase";
+import { firebaseAuth, firestore } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 
 const Signup = () => {
   const navigate = useNavigate();
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,19 +24,18 @@ const Signup = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
-        
-      }); 
-      try {
+      });
+    try {
       const docRef = await addDoc(collection(firestore, "SignedUpUsersData"), {
         Name: name,
-        Email: email
+        Email: email,
       });
       setLastId(docRef.id);
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
     }
-  };  
+  };
 
   return (
     <div className="auth-container">

@@ -1,8 +1,8 @@
-import "./css/home.css";
-import { AuthContext } from "./AuthContext";
+import "../css/home.css";
+import { AuthContext } from "../AuthContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import greenhouse from "./images/greenhouse.jpeg";
+import greenhouse from "../images/greenhouse.jpeg";
 
 export default function Home() {
   const navigate = useNavigate();
