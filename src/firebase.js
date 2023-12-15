@@ -27,6 +27,5 @@ export const analytics = getAnalytics(app);
 export const firebaseAuth = getAuth(app); //auth
 export const firestore = getFirestore(app); //db
 export const storage = getStorage(app); //storage
-export const storageRef = ref(storage, app);
 
 export default app;

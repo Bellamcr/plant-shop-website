@@ -1,13 +1,7 @@
-import React from "react";
-import { useState } from "react";
-import {
-  firestore,
-  storage,
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-} from "../../firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import React, { useState } from "react";
+import { firestore, storage } from "../../firebase";
 
 export const AddProducts = () => {
   const [productName, setProductName] = useState("");
@@ -15,14 +9,20 @@ export const AddProducts = () => {
   const [productImg, setProductImg] = useState(null);
   const [error, setError] = useState("");
 
-  const types = { contentType: "image/jpg" }; // image types
+  const types = ["image/png", "image/jpeg"]; // image types
+  const metadata = {
+    contentType: "image/jpeg",
+  };
 
   const productImgHandler = (e) => {
     let selectedFile = e.target.files[0];
+    console.log("file", selectedFile);
     if (selectedFile && types.includes(selectedFile.type)) {
       setProductImg(selectedFile);
+      console.log("file 2", selectedFile);
       setError("");
     } else {
+      console.log("falhou");
       setProductImg(null);
       setError("Please select a valid image type (jpg)");
     }
@@ -69,20 +69,18 @@ export const AddProducts = () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           console.log("File available at", downloadURL);
           const docRef = addDoc(collection(firestore, "Products"), {
-              ProductName: productName,
-              ProductPrice: Number(productPrice),
-              ProductImg: url,
-            });then(() => {
-              setProductName("");
-              setProductPrice(0);
-              setProductImg("");
-              setError("");
-              document.getElementById("file").value = "";
-            })
-            .catch((err) => setError(err.message));
+            ProductName: productName,
+            ProductPrice: Number(productPrice),
+            ProductImg: downloadURL,
+          });
+            setLastId(docRef.id);
+            console.log("Document written with ID: ", docRef.id);
+            setProductName('');
+            setProductPrice(0)
+            setProductImg('');
+            setError('');
+          }).catch((err) => setError(err.message));
         });
-      }
-    );
   };
 
   return (
