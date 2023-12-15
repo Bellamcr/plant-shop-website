@@ -1,4 +1,4 @@
-import { AddProducts } from "../../AddProducts";
+import { AddProducts } from "./AddProducts";
 import "./styles.css";
 
 function Admin() {
