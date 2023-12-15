@@ -7,6 +7,7 @@ export const AddProducts = () => {
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState(0);
   const [productImg, setProductImg] = useState(null);
+  const [lastId, setLastId] = useState();
   const [error, setError] = useState("");
 
   const types = ["image/png", "image/jpeg"]; // image types
@@ -66,30 +67,33 @@ export const AddProducts = () => {
       },
       () => {
         // Upload completed successfully, now we can get the download URL
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log("File available at", downloadURL);
-          const docRef = addDoc(collection(firestore, "Products"), {
-            ProductName: productName,
-            ProductPrice: Number(productPrice),
-            ProductImg: downloadURL,
-          });
+        getDownloadURL(uploadTask.snapshot.ref)
+          .then((downloadURL) => {
+            console.log("File available at", downloadURL);
+            const docRef = addDoc(collection(firestore, "Products"), {
+              ProductName: productName,
+              ProductPrice: Number(productPrice),
+              ProductImg: downloadURL,
+            });
             setLastId(docRef.id);
             console.log("Document written with ID: ", docRef.id);
-            setProductName('');
-            setProductPrice(0)
-            setProductImg('');
-            setError('');
-          }).catch((err) => setError(err.message));
-        });
+            setProductName("");
+            setProductPrice(0);
+            setProductImg("");
+            setError("");
+          })
+          .catch((err) => setError(err.message));
+      }
+    );
   };
 
   return (
-    <div className="container">
+    <div className="form-container">
       <br />
       <h2>ADD PRODUCTS</h2>
       <hr />
       <form autoComplete="off" className="form-group" onSubmit={addProduct}>
-        <label htmlFor="product-name">Product Name</label>
+        <label htmlFor="product-name">Product Name: </label>
         <input
           type="text"
           className="form-control"
@@ -98,7 +102,7 @@ export const AddProducts = () => {
           value={productName}
         />
         <br />
-        <label htmlFor="product-price">Product Price</label>
+        <label htmlFor="product-price">Product Price: </label>
         <input
           type="number"
           className="form-control"
@@ -107,7 +111,7 @@ export const AddProducts = () => {
           value={productPrice}
         />
         <br />
-        <label htmlFor="product-img">Product Image</label>
+        <label htmlFor="product-img">Product Image: </label>
         <input
           type="file"
           className="form-control"
@@ -116,7 +120,7 @@ export const AddProducts = () => {
           onChange={productImgHandler}
         />
         <br />
-        <button type="submit" className="btn btn-success btn-md mybtn">
+        <button type="submit" className="btn-success mybtn">
           ADD
         </button>
       </form>
