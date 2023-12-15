@@ -1,7 +1,7 @@
 h1 {
   color: #61b390;
   font-family: "allerbold" sans-serif;
-  font-size: 3vw;
+  font-size: 3.5vw;
   text-align: center;
 }
 h2 {
@@ -21,6 +21,8 @@ h2 {
 }
 .header .headertext {
   align-items: center;
+  font-weight: 200;
+  
 }
 
 .header .leftside {
@@ -54,7 +56,7 @@ h2 {
 /* navbar */
 .navbar {
   background-color: #01352c;
-  padding: 0px;
+  padding: 7px;
   text-align: center;
   width: 100%;
 }
@@ -70,7 +72,7 @@ h2 {
   text-decoration: none;
   list-style: none;
   margin: 100px;
-  padding: 0.5em 1em 0.17em 1em;
+  padding: 0.5em 1em 0.43em 1em;
   font-size: 1.5vw;
 }
 .navbar a:hover {

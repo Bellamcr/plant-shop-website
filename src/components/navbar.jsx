@@ -27,7 +27,7 @@ export default function Navbar() {
         <div className="leftside">
           <img className="logo" title="Home" src={logo} alt="Green House Logo" onClick={() => navigate("/")} />
         </div>
-        <h1 className="headertext"> Green House </h1>
+        <h1 className="headertext"> GREEN HOUSE </h1>
         <div className="rightside">
           {auth && auth.currentUser ? (
             <>

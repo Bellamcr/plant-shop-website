@@ -10,6 +10,7 @@ import Shop from "./components/shop";
 import About from "./components/about";
 import Contact from "./components/contact";
 import Error from "./components/error";
+import Admin from "./pages/Admin";
 
 function App() {
   const [auth, setAuth] = useState(null);
@@ -27,6 +28,10 @@ function App() {
     {
       path: "/signup",
       element: <Signup />,
+    },
+    {
+      path: "/admin",
+      element: <Admin />,
     },
     {
       element: <Layout />,

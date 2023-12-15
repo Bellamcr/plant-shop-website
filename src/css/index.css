@@ -13,6 +13,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "fingerpaint";
+  src: url("fonts/FingerPaint-Regular.ttf") format("TrueType");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: auto;
 }

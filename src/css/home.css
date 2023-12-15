@@ -22,10 +22,29 @@
 
 }
 
-/* .text1 {
+.text1 {
   text-align: center;
-  font-size: 1.5vw;
+  font-size: 1.8vw;
+  font-style: italic;
+  font-weight: 200;
 }
 .text2 {
-  font-size: 1vw;
+  text-decoration: underline;
+  font-size: 2vw;
+  padding-left: 0.3cm;
+}
+
+.clientphotos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+}
+.client {
+  width: 18%;
+  height: 6cm;
+  border-style: double;
+  border-width: 0.3cm;
+  border-color: #01352c;
 }

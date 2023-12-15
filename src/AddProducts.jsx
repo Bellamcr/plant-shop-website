@@ -10,46 +10,62 @@ export const AddProducts = () => {
   const [error, setError] = useState("");
   // If encounter any problem during addProducts process show the error on web
 
-  const types = ['image/png', 'image/jpg', 'image/jpeg']
+  const types = ["image/png", "image/jpg", "image/jpeg"];
 
-  const productImgHandler = (e) =>{
+  const productImgHandler = (e) => {
     let selectedFile = e.target.files[0];
-    if(selectedFile && types.includes(selectedFile.type)){
-        setProductImg(selectedFile);
-        setError('');
-    }else{
-        setProductImg(null);
-        setError('Type invalid choose png, jpg or jpeg.');
+    if (selectedFile && types.includes(selectedFile.type)) {
+      setProductImg(selectedFile);
+      setError("");
+    } else {
+      setProductImg(null);
+      setError("Type invalid choose png, jpg or jpeg.");
     }
-  }
-//   Add product form submit event
+  };
+  //   Add product form submit event
   const addProducts = (e) => {
     e.preventDefault();
 
-// Storing the image
-    const uploadTask = storage.ref(`product-images/${productImg.name}`).put(productImg);
-    uploadTask.on('state_changed', snapshot => {
-        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    // Storing the image
+    const uploadTask = storage
+      .ref(`product-images/${productImg.name}`)
+      .put(productImg);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         console.log(progress);
-    }, err => {
-        setError(err.message)
-    }, () => {
+      },
+      (err) => {
+        setError(err.message);
+      },
+      () => {
         //getting product url an if it is OK store in firebase
-        storage.ref('product-images').child(productImg.name).getDownloadURL().then(url => {
-            firestore.collection('Products').add({
+        storage
+          .ref("product-images")
+          .child(productImg.name)
+          .getDownloadURL()
+          .then((url) => {
+            firestore
+              .collection("Products")
+              .add({
                 ProductName: productName,
                 ProductPrice: Number(productPrice),
-                ProductImg: url
-            }).then(() => {
-                setProductName('');
+                ProductImg: url,
+              })
+              .then(() => {
+                setProductName("");
                 setProductPrice(0);
-                setProductImg('');
-                setError('');
-                document.getElementById('file').value = '';
-            }).catch(err => setError(err.message));
-        })
-    })
-  }
+                setProductImg("");
+                setError("");
+                document.getElementById("file").value = "";
+              })
+              .catch((err) => setError(err.message));
+          });
+      }
+    );
+  };
 
   //If the product is added claring input fields
 
@@ -95,11 +111,8 @@ export const AddProducts = () => {
 };
 
 //  create a route
-
 //  bootstrap classes - AddProducts and productImgHandler
-
 //  add import of bootstrap
-
 //  for the ADD botton be bigger in cell screen
 // @media(max-width: 768px) {
 //     .mybtn {
