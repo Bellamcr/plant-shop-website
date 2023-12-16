@@ -6,7 +6,7 @@ import "./fonts/aller_bd-webfont.woff";
 import "./fonts/aller_bd-webfont.woff2";
 import "./fonts/caviardreams-webfont.woff";
 import "./fonts/caviardreams-webfont.woff2";
-import "./fonts/FingerPaint-Regular.ttf"
+
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
