@@ -23,7 +23,7 @@ export const AddProducts = () => {
       console.log("file 2", selectedFile);
       setError("");
     } else {
-      console.log("falhou");
+      console.log("failed");
       setProductImg(null);
       setError("Please select a valid image type (jpg)");
     }
@@ -129,12 +129,7 @@ export const AddProducts = () => {
   );
 };
 
-//  create a route
+
 //  bootstrap classes - AddProducts and productImgHandler
 
-//  for the ADD botton be bigger in cell screen
-// @media(max-width: 768px) {
-//     .mybtn {
-//         width: 100%
-//     }
-// }
+
