@@ -9,7 +9,6 @@ import client3 from "../images/client3.jpg";
 import client4 from "../images/client4.jpg";
 import client5 from "../images/client5.jpg";
 
-
 export default function Home() {
   const navigate = useNavigate();
   const auth = useContext(AuthContext);
@@ -30,31 +29,11 @@ export default function Home() {
       </div>
       <h2 className="text2">Clients photos</h2>
       <div className="clientphotos">
-        <img
-          className="client"
-          src={client1}
-          alt="Client Photo"
-        /> 
-        <img
-          className="client"
-          src={client2}
-          alt="Client Photo"
-        /> 
-        <img
-          className="client"
-          src={client3}
-          alt="Client Photo"
-        /> 
-        <img
-          className="client"
-          src={client4}
-          alt="Client Photo"
-        /> 
-        <img
-          className="client"
-          src={client5}
-          alt="Client Photo"
-        />        
+        <img className="client" src={client1} alt="Client Photo" />
+        <img className="client" src={client2} alt="Client Photo" />
+        <img className="client" src={client3} alt="Client Photo" />
+        <img className="client" src={client4} alt="Client Photo" />
+        <img className="client" src={client5} alt="Client Photo" />
       </div>
     </>
   );

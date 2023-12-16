@@ -55,3 +55,9 @@ h2 {
   margin-bottom: 2px;
   outline: none;
 }
+
+@media (max-width: 768px) {
+  .addcart-btn {
+    width: 100%;
+  }
+}

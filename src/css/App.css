@@ -18,6 +18,12 @@ p {
   font-size: 1.2vw;
 }
 
+@media (max-width: 768px) {
+  h1 h2 p {
+    text-align: center;
+    padding: 10px;
+  }
+}
 /* header */
 .header {
   width: 100%;
@@ -27,10 +33,16 @@ p {
   justify-content: space-between;
   align-items: center;
 }
+
+@media (max-width: 768px) {
+  .header {
+    width: 100%;
+  }
+}
+
 .header .headertext {
   align-items: center;
   font-weight: 200;
-  
 }
 
 .header .leftside {
@@ -43,6 +55,13 @@ p {
   width: 100%;
   height: 100%;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .logo:hover {
@@ -63,31 +82,30 @@ p {
 
 /* navbar */
 .navbar {
-  
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   background-color: #01352c;
-  padding: 7px;
-  
   width: 100%;
 }
-.navbar ul {
-  position: sticky;
-  top: 0;
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
 .navbar a {
-  
   font-family: "caviar_dreamsregular" sans-serif;
   color: #e1eacd;
   text-decoration: none;
   list-style: none;
-  margin: 100px;
-  padding: 0.5em 1em 0.43em 1em;
   font-size: 1.5vw;
+  margin-left: 40px;
+  padding: 2px 30px;
 }
 .navbar a:hover {
   color: #01352c;
   background: #e1eacd;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar {
+    width: 100%;
+  }
 }
 
 /* buttons */
@@ -95,14 +113,14 @@ button {
   border-radius: 10px;
   border: 1px solid transparent;
   padding: 0.4em 1em;
-  font-size: 1em;
+  font-size: 1vw;
   font-weight: 500;
   font-family: "caviar_dreamsregular" sans-serif;
   color: #0c302a;
   background-color: #bad8b6;
   cursor: pointer;
   transition: border-color 0.25s;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 button:hover {
   border-color: #0c302a;
@@ -149,7 +167,19 @@ button:focus-visible {
 }
 
 @media (max-width: 768px) {
-  .mybtn {
-    width: 50%;
+  .container-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-auth {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  button {
+    width: 20%;
   }
 }

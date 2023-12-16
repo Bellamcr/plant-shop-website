@@ -12,14 +12,13 @@
   border: 2px solid #01352c;
   padding: 10px;
   border-radius: 30px;
-  background-color: transparent ;
+  background-color: transparent;
 }
+
 .grid img {
-  
   width: 100%;
   height: auto;
   opacity: 0.5;
-
 }
 
 .text1 {
@@ -37,14 +36,17 @@
 
 .clientphotos {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-  margin: auto;
+  flex-direction: row;
+  align-content: space-around;
+  position: relative;
+  width: auto;
+  height: auto;
 }
 .client {
-  width: 18%;
+  width: 100%;
   height: 6cm;
+  margin-left: 10px;
+  margin-bottom: 50px;
   border-style: double;
   border-width: 0.3cm;
   border-color: #01352c;
