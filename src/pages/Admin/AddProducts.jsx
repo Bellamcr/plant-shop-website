@@ -14,7 +14,6 @@ export const AddProducts = () => {
   const metadata = {
     contentType: "image/jpeg",
   };
-
   const productImgHandler = (e) => {
     let selectedFile = e.target.files[0];
     console.log("file", selectedFile);
@@ -50,8 +49,6 @@ export const AddProducts = () => {
         }
       },
       (error) => {
-        // A full list of error codes is available at
-        // https://firebase.google.com/docs/storage/web/handle-errors
         switch (error.code) {
           case "storage/unauthorized":
             // User doesn't have permission to access the object
@@ -79,7 +76,7 @@ export const AddProducts = () => {
             console.log("Document written with ID: ", docRef.id);
             setProductName("");
             setProductPrice(0);
-            setProductImg("");
+            setProductImg(null);
             setError("");
           })
           .catch((err) => setError(err.message));
@@ -129,7 +126,4 @@ export const AddProducts = () => {
   );
 };
 
-
 //  bootstrap classes - AddProducts and productImgHandler
-
-

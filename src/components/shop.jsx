@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "../css/shop.css";
-import chineseevergreen from "../images/chineseevergreen.jpg";
 import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../firebase";
 
@@ -25,19 +24,19 @@ export default function Shop() {
   return (
     <>
       <h2>All products</h2>
-      <div className="cards">
+      <div className="cards-container">
         {products?.map((product) => (
           <div className="card" key={product.id}>
             <img
-              className="card_img"
+              className="card-img"
               src={product.ProductImg}
               alt={product.ProductName}
 
             />
-            <h2>{product.ProductName}</h2>
-            <p className="price">CAD${product.ProductPrice}</p>
+            <h2 className="card-name">{product.ProductName}</h2>
+            <p className="price">CA$ {product.ProductPrice}</p>
             <p>
-              <button>Add to Cart</button>
+              <button className="addcart-btn">Add to Cart</button>
             </p>
           </div>
         ))}

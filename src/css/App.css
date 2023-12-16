@@ -11,6 +11,13 @@ h2 {
   text-align: center;
 }
 
+p {
+  color: #0c302a;
+  font-family: "caviar_dreamsregular" sans-serif;
+  text-align: center;
+  font-size: 1.2vw;
+}
+
 /* header */
 .header {
   width: 100%;
@@ -56,9 +63,10 @@ h2 {
 
 /* navbar */
 .navbar {
+  
   background-color: #01352c;
   padding: 7px;
-  text-align: center;
+  
   width: 100%;
 }
 .navbar ul {
@@ -68,6 +76,7 @@ h2 {
   margin-top: 0px;
 }
 .navbar a {
+  
   font-family: "caviar_dreamsregular" sans-serif;
   color: #e1eacd;
   text-decoration: none;
@@ -81,6 +90,7 @@ h2 {
   background: #e1eacd;
 }
 
+/* buttons */
 button {
   border-radius: 10px;
   border: 1px solid transparent;
@@ -102,40 +112,8 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-p {
-  color: #0c302a;
-  font-family: "caviar_dreamsregular" sans-serif;
-  text-align: center;
-  font-size: 1.2vw;
-}
-
-/* .navbar + .text1{
-  padding-top: 60px;
-} */
-
-/* img {
-  width: 100%;
-  height: auto;
-  opacity: 0.5;
-}  */
-
-/* div {
-  color: #bad8b6;
-  font-family: "caviar_dreamsregular";
-  font-size: 1.5vw;
-  text-align: center;
-} */
-
-/* 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
-
 /* login and signup */
+
 .auth-container {
   display: flex;
   flex-direction: column;
