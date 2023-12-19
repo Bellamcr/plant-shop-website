@@ -1,15 +1,17 @@
 import "./css/App.css";
-import { useState, useEffect } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./layout";
-import Signup from "./components/signup";
-import Login from "./components/login";
+import { useEffect, useState } from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AuthProvider from "./AuthContext";
-import Home from "./components/home";
-import Shop from "./components/shop";
+import Cart from "./Cart";
+import { CartContextProvider } from "./CartContext";
 import About from "./components/about";
 import Contact from "./components/contact";
 import Error from "./components/error";
+import Home from "./components/home";
+import Login from "./components/login";
+import Shop from "./components/shop";
+import Signup from "./components/signup";
+import Layout from "./layout";
 import Admin from "./pages/Admin";
 
 function App() {
@@ -53,16 +55,20 @@ function App() {
           path: "/contact",
           element: <Contact />,
         },
+        {
+          path: "/cart",
+          element: <Cart />,
+        },
       ],
     },
   ]);
 
   return (
-    <>
+    <CartContextProvider>
       <AuthProvider {...{ auth, setAuth }}>
         <RouterProvider router={router} />
       </AuthProvider>
-    </>
+    </CartContextProvider>
   );
 }
 

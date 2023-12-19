@@ -42,8 +42,8 @@ export default function Navbar() {
                 title="ShoppingCart"
                 src={cart}
                 alt="Shopping Cart"
+                onClick={() => navigate("/cart")}
               />
-              {/* onClick={() => navigate("/cartproduct")} */}
               <button onClick={handleLogout}> Logout </button>
             </>
           ) : (

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { firebaseAuth, firestore } from "../firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, setDoc, doc } from "firebase/firestore";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -18,6 +18,11 @@ const Signup = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
+        // setDoc(doc(firestore, "SignedUpUsersData", "user.id"), {
+        //   Name: name,
+        //   Email: email,
+        //   User: user.id,
+        // });
         navigate("/login");
       })
       .catch((error) => {
@@ -25,17 +30,16 @@ const Signup = () => {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
       });
-    try {
+      try {
       const docRef = await addDoc(collection(firestore, "SignedUpUsersData"), {
         Name: name,
         Email: email,
       });
       setLastId(docRef.id);
       console.log("Document written with ID: ", docRef.id);
-      
-    } catch (e) {
+      } catch (e) {
       console.error("Error adding document: ", e);
-    }
+      }
   };
 
   return (
