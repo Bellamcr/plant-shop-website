@@ -37,22 +37,22 @@
     width: 50%;
   }
 }
-.list-product {
+.list-products {
   font-family: "caviar_dreamsregular";
-  width: 850px;
+  width: auto;
   height: auto;
   margin: 20px auto;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .product {
   padding: 30px 10px;
   height: 100px;
   display: flex;
-  justify-content: space-around;
   align-items: center;
   border-top: 1px solid #e1e8ee;
   border-bottom: 1px solid #e1e8ee;
@@ -60,16 +60,19 @@
 
 .product-img {
   margin-right: 50px;
+  margin-left: 50px;
   width: 120px;
   height: 120px;
 }
 
 .product-name {
   font-family: "allerbold";
+  width: 500px;
   font-size: 1.5vw;
   color: #61b390;
   text-align: center;
   margin-bottom: 5px;
+  margin-left: 150px;
 }
 .price {
   font-size: 1vw;
@@ -81,12 +84,12 @@
 .delete-btn {
   margin-right: 60px;
   display: flex;
-  padding: 0.4em 0.4em;
+  padding: 0.4em 1em;
 }
 
 .addproduct-btn {
   margin: 60px 50px 50px;
   display: flex;
   justify-content: center;
-  padding: 0.4em 0.4em;
+  padding: 0.4em 1em;
 }
