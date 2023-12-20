@@ -47,13 +47,15 @@ h2 {
 }
 
 .addcart-btn {
-  border: hidden;
   cursor: pointer;
   width: 100%;
   padding: 10px 14px;
   margin-top: 5px;
   margin-bottom: 2px;
-  outline: none;
+}
+
+.addcart-btn:active {
+  box-shadow: 2px 2px 5px;
 }
 
 @media (max-width: 768px) {

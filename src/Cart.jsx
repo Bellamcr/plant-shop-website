@@ -47,21 +47,24 @@ export default function Cart() {
               >
                 Delete
               </button>
-
-              {/* <div className="cart-img">
-                <img src={cart.ProductImg} alt="not found" />
-              </div> */}
-              <div className="desciption">
+              <div>
+                <img
+                  className="cart-img"
+                  src={product.ProductImg}
+                  alt="not found"
+                />
+              </div>
+              <div className="description">
                 <div className="cart-name">{product.ProductName}</div>
 
                 <div className="cart-price-orignal">
-                  CA$ {product.ProductPrice}
+                  C$ {product.ProductPrice}
                 </div>
               </div>
 
               <div className="quantity">
                 <button
-                  className="inc-btn"
+                  className="qty-btn"
                   onClick={() =>
                     dispatch({
                       type: "INC",
@@ -76,7 +79,7 @@ export default function Cart() {
                 <div className="prod-quantity">{product.qty}</div>
 
                 <button
-                  className="dec-btn"
+                  className="qty-btn"
                   onClick={() =>
                     dispatch({
                       type: "DEC",
@@ -90,7 +93,7 @@ export default function Cart() {
               </div>
 
               <div className="cart-price">
-                CA$ {product.ProductPrice * product.qty}
+                C$ {Math.round(product.ProductPrice * product.qty * 100)/100}
               </div>
             </div>
           ))}
@@ -98,15 +101,15 @@ export default function Cart() {
           <div className="cart-summary">
             <div className="cart-summary-heading">Cart-Summary</div>
             <div className="cart-summary-price">
-              <span>Total Price</span>
-              <span>{totalPrice}</span>
+              <span>Total Price: C$ </span>
+              <span>{Math.round(totalPrice * 100)/100}</span>
             </div>
             <div className="cart-summary-price">
-              <span>Total Qty</span>
+              <span>Total Qty: </span>
               <span>{totalQty}</span>
             </div>
             <NavLink to="cashout" className="cashout-link">
-              <button className="cashout" style={{ marginTop: 5 + "px" }}>
+              <button className="cashout">
                 Cash on delivery
               </button>
             </NavLink>

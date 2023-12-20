@@ -35,7 +35,7 @@ export default function Shop() {
               alt={product.ProductName}
             />
             <h2 className="card-name">{product.ProductName}</h2>
-            <p className="price">CA$ {product.ProductPrice}</p>
+            <p className="price">C$ {product.ProductPrice}</p>
             <p>
               <button
                 className="addcart-btn"

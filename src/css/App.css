@@ -1,19 +1,19 @@
 h1 {
   color: #61b390;
-  font-family: "allerbold" sans-serif;
+  font-family: "allerbold";
   font-size: 3.5vw;
   text-align: center;
 }
 h2 {
   color: #61b390;
-  font-family: "allerbold" sans-serif;
+  font-family: "allerbold";
   font-size: 2vw;
   text-align: center;
 }
 
 p {
   color: #0c302a;
-  font-family: "caviar_dreamsregular" sans-serif;
+  font-family: "caviar_dreamsregular";
   text-align: center;
   font-size: 1.2vw;
 }
@@ -89,7 +89,7 @@ p {
   width: 100%;
 }
 .navbar a {
-  font-family: "caviar_dreamsregular" sans-serif;
+  font-family: "caviar_dreamsregular";
   color: #e1eacd;
   text-decoration: none;
   list-style: none;
@@ -115,7 +115,7 @@ button {
   padding: 0.4em 1em;
   font-size: 1vw;
   font-weight: 500;
-  font-family: "caviar_dreamsregular" sans-serif;
+  font-family: "caviar_dreamsregular";
   color: #0c302a;
   background-color: #bad8b6;
   cursor: pointer;
@@ -124,10 +124,6 @@ button {
 }
 button:hover {
   border-color: #0c302a;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 /* login and signup */
@@ -143,7 +139,7 @@ button:focus-visible {
 }
 .form-text {
   color: #0c302a;
-  font-family: "caviar_dreamsregular" sans-serif;
+  font-family: "caviar_dreamsregular";
   font-size: 1.5vw;
   text-align: center;
 }
@@ -154,8 +150,6 @@ button:focus-visible {
 }
 
 .btn-auth {
-  color: #0c302a;
-  font-family: "caviar_dreamsregular" sans-serif;
   padding: 0.5em 2em;
   font-size: 1vw;
   margin: 0;

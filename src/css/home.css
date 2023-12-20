@@ -15,6 +15,11 @@
   background-color: transparent;
 }
 
+.grid .photobutton:hover {
+  box-shadow: 0 0 5px #0a5b13;
+  text-shadow: 0 0 5px;
+}
+
 .grid img {
   width: 100%;
   height: auto;
