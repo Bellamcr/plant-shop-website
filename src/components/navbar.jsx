@@ -48,6 +48,13 @@ export default function Navbar() {
             </>
           ) : (
             <>
+              <img
+                className="cart"
+                title="ShoppingCart"
+                src={cart}
+                alt="Shopping Cart"
+                onClick={() => navigate("/cart")}
+              />
               <button onClick={() => navigate("/login")}> Login </button>
               <button onClick={() => navigate("/signup")}> Sign up </button>
             </>

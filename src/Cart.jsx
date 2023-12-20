@@ -63,6 +63,19 @@ export default function Cart() {
               </div>
 
               <div className="quantity">
+              <button
+                  className="qty-btn"
+                  onClick={() =>
+                    dispatch({
+                      type: "DEC",
+                      id: product.id,
+                      product,
+                    })
+                  }
+                >
+                  -
+                </button>
+                <div className="prod-quantity">{product.qty}</div>
                 <button
                   className="qty-btn"
                   onClick={() =>
@@ -76,20 +89,7 @@ export default function Cart() {
                   +
                 </button>
 
-                <div className="prod-quantity">{product.qty}</div>
-
-                <button
-                  className="qty-btn"
-                  onClick={() =>
-                    dispatch({
-                      type: "DEC",
-                      id: product.id,
-                      product,
-                    })
-                  }
-                >
-                  -
-                </button>
+                
               </div>
 
               <div className="cart-price">
