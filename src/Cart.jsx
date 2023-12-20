@@ -28,7 +28,7 @@ export default function Cart() {
               the page) or you are not logged in
             </div>
             <div>
-              <NavLink to="/">Return to Home page</NavLink>
+              <NavLink to="/shop">Return to Shop page</NavLink>
             </div>
           </>
         )}

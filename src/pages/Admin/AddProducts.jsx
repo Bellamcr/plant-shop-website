@@ -3,7 +3,9 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import React, { useState } from "react";
 import { firestore, storage } from "../../firebase";
 
-export const AddProducts = () => {
+
+export default function AddProducts () {
+  
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState(0);
   const [productImg, setProductImg] = useState(null);
@@ -24,7 +26,7 @@ export const AddProducts = () => {
     } else {
       console.log("failed");
       setProductImg(null);
-      setError("Please select a valid image type (jpg)");
+      setError("Please select a valid image type (png or jpeg)");
     }
   };
 

@@ -13,6 +13,7 @@ import Shop from "./components/shop";
 import Signup from "./components/signup";
 import Layout from "./layout";
 import Admin from "./pages/Admin";
+import AddProducts from "./pages/Admin/AddProducts";
 
 function App() {
   const [auth, setAuth] = useState(null);
@@ -35,6 +36,11 @@ function App() {
       path: "/admin",
       element: <Admin />,
     },
+    {
+      path: "/adminadd",
+      element: <AddProducts />,
+    },
+
     {
       element: <Layout />,
       children: [

@@ -2,14 +2,14 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { firebaseAuth, firestore } from "../firebase";
-import { collection, addDoc, setDoc, doc } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 
 const Signup = () => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [lastId, setLastId] = useState();
+  // const [lastId, setLastId] = useState();
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -18,11 +18,11 @@ const Signup = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        // setDoc(doc(firestore, "SignedUpUsersData", "user.id"), {
-        //   Name: name,
-        //   Email: email,
-        //   User: user.id,
-        // });
+        setDoc(doc(firestore, "SignedUpUsersData", user.uid), {
+          Name: name,
+          Email: email,
+          id: user.uid,
+        });
         navigate("/login");
       })
       .catch((error) => {
@@ -30,16 +30,16 @@ const Signup = () => {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
       });
-      try {
-      const docRef = await addDoc(collection(firestore, "SignedUpUsersData"), {
-        Name: name,
-        Email: email,
-      });
-      setLastId(docRef.id);
-      console.log("Document written with ID: ", docRef.id);
-      } catch (e) {
-      console.error("Error adding document: ", e);
-      }
+      // try {
+      // const docRef = await addDoc(collection(firestore, "SignedUpUsersData"), {
+      //   Name: name,
+      //   Email: email,
+      // });
+      // setLastId(docRef.id);
+      // console.log("Document written with ID: ", docRef.id);
+      // } catch (e) {
+      // console.error("Error adding document: ", e);
+      // }
   };
 
   return (

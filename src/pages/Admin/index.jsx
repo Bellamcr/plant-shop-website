@@ -1,8 +1,9 @@
-import { AddProducts } from "./AddProducts";
+// import { AddProducts } from "./AddProducts";
+import ListProducts from "./ListProducts";
 import "./styles.css";
 
 function Admin() {
-  return <AddProducts />;
+  return <ListProducts />;
 }
 
 export default Admin;
