@@ -5,13 +5,14 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { firebaseAuth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
-export default function Cart({ auth, setAuth, children }) {
-  const { shoppingCart, totalPrice, totalQty } = useContext(CartContext);
+export default function Cart() {
+  const { shoppingCart, totalPrice, totalQty, dispatch } =
+    useContext(CartContext);
 
   useEffect(() => {
     onAuthStateChanged(firebaseAuth, (user) => {
       if (!user) {
-        // navigate("/login");
+        navigate("/login");
       }
     });
   });
@@ -36,10 +37,15 @@ export default function Cart({ auth, setAuth, children }) {
             <div className="cart-card" key={product.id}>
               <button
                 className="delete"
-                // onClick={() =>
-                //   dispatch({ type: "DELETE", id: cart.ProductID, cart })
-                // }
-              >Delete
+                onClick={() =>
+                  dispatch({
+                    type: "DELETE",
+                    id: product.id,
+                    product,
+                  })
+                }
+              >
+                Delete
               </button>
 
               {/* <div className="cart-img">
@@ -56,9 +62,13 @@ export default function Cart({ auth, setAuth, children }) {
               <div className="quantity">
                 <button
                   className="inc-btn"
-                  // onClick={() =>
-                  // dispatch({ type: "INC", id: cart.product.id, cart })
-                  // }
+                  onClick={() =>
+                    dispatch({
+                      type: "INC",
+                      id: product.id,
+                      product,
+                    })
+                  }
                 >
                   +
                 </button>
@@ -67,9 +77,13 @@ export default function Cart({ auth, setAuth, children }) {
 
                 <button
                   className="dec-btn"
-                  // onClick={() =>
-                  //   dispatch({ type: "DEC", id: cart.product.id, cart })
-                  // }
+                  onClick={() =>
+                    dispatch({
+                      type: "DEC",
+                      id: product.id,
+                      product,
+                    })
+                  }
                 >
                   -
                 </button>

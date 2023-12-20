@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "../css/shop.css";
 import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../firebase";
+import { CartContext } from "../CartContext";
 
 export default function Shop() {
   const [products, setProducts] = useState([]);
+  const { dispatch } = useContext(CartContext);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -31,12 +33,16 @@ export default function Shop() {
               className="card-img"
               src={product.ProductImg}
               alt={product.ProductName}
-
             />
             <h2 className="card-name">{product.ProductName}</h2>
             <p className="price">CA$ {product.ProductPrice}</p>
             <p>
-              <button className="addcart-btn">Add to Cart</button>
+              <button
+                className="addcart-btn"
+                onClick={() => dispatch({ type: "ADD_TO_CART", product })}
+              >
+                Add to Cart
+              </button>
             </p>
           </div>
         ))}

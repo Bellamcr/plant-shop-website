@@ -1,74 +1,49 @@
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
-toast.configure();
-
 export const CartReducer = (state, action) => {
   const { shoppingCart, totalPrice, totalQty } = state;
-
-  let product;
-  let index;
-  let updatedPrice;
-  let updatedQty;
+  let product = {};
+  let index = -1;
+  let updatedTotalPrice = 0;
+  let updatedTotalQty = 0;
 
   switch (action.type) {
     case "ADD_TO_CART":
-      const check = shoppingCart.find(
-        (product) => product.ProductID === action.id
-      );
-      if (check) {
-        toast.info("this product is already in your cart", {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: false,
-          progress: undefined,
-        });
-        return state;
-      } else {
-        product = action.product;
-        product["qty"] = 1;
-        product["TotalProductPrice"] = product.ProductPrice * product.qty;
-        updatedQty = totalQty + 1;
-        updatedPrice = totalPrice + product.ProductPrice;
-        return {
-          shoppingCart: [product, ...shoppingCart],
-          totalPrice: updatedPrice,
-          totalQty: updatedQty,
-        };
-      }
+      product = { ...action.product };
+      product["qty"] = 1;
+      updatedTotalQty = totalQty + 1;
+      updatedTotalPrice = totalPrice + product.ProductPrice;
+      return {
+        shoppingCart: [product, ...shoppingCart],
+        totalPrice: updatedTotalPrice,
+        totalQty: updatedTotalQty,
+      };
       break;
 
     case "INC":
-      product = action.cart;
-      product.qty = ++product.qty;
-      product.TotalProductPrice = product.qty * product.ProductPrice;
-      updatedQty = totalQty + 1;
-      updatedPrice = totalPrice + product.ProductPrice;
-      index = shoppingCart.findIndex((cart) => cart.ProductID === action.id);
+      product = { ...action.product };
+      product.qty += 1;
+      updatedTotalQty = totalQty + 1;
+      updatedTotalPrice = totalPrice + product.ProductPrice;
+      index = shoppingCart.findIndex((product) => product.id === action.id);
       shoppingCart[index] = product;
       return {
         shoppingCart: [...shoppingCart],
-        totalPrice: updatedPrice,
-        totalQty: updatedQty,
+        totalPrice: updatedTotalPrice,
+        totalQty: updatedTotalQty,
       };
       break;
 
     case "DEC":
-      product = action.cart;
+      product = { ...action.product };
       if (product.qty > 1) {
         product.qty = product.qty - 1;
-        product.TotalProductPrice = product.qty * product.ProductPrice;
-        updatedPrice = totalPrice - product.ProductPrice;
-        updatedQty = totalQty - 1;
-        index = shoppingCart.findIndex((cart) => cart.ProductID === action.id);
+        updatedTotalPrice = totalPrice - product.ProductPrice;
+        updatedTotalQty = totalQty - 1;
+        index = shoppingCart.findIndex((product) => product.id === action.id);
         shoppingCart[index] = product;
         return {
           shoppingCart: [...shoppingCart],
-          totalPrice: updatedPrice,
-          totalQty: updatedQty,
+          totalPrice: updatedTotalPrice,
+          totalQty: updatedTotalQty,
         };
       } else {
         return state;
@@ -77,15 +52,15 @@ export const CartReducer = (state, action) => {
 
     case "DELETE":
       const filtered = shoppingCart.filter(
-        (product) => product.ProductID !== action.id
+        (product) => product.id !== action.id
       );
-      product = action.cart;
-      updatedQty = totalQty - product.qty;
-      updatedPrice = totalPrice - product.qty * product.ProductPrice;
+      product = { ...action.product };
+      updatedTotalQty = totalQty - product.qty;
+      updatedTotalPrice = totalPrice - product.qty * product.ProductPrice;
       return {
         shoppingCart: [...filtered],
-        totalPrice: updatedPrice,
-        totalQty: updatedQty,
+        totalPrice: updatedTotalPrice,
+        totalQty: updatedTotalQty,
       };
       break;
 
