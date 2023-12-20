@@ -2,10 +2,9 @@ import { addDoc, collection } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import React, { useState } from "react";
 import { firestore, storage } from "../../firebase";
+import { NavLink } from "react-router-dom";
 
-
-export default function AddProducts () {
-  
+export default function AddProducts() {
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState(0);
   const [productImg, setProductImg] = useState(null);
@@ -123,9 +122,15 @@ export default function AddProducts () {
           ADD
         </button>
       </form>
+      <br />
+      <br />
+      <br />
+      <div>
+        Return to <NavLink to="/admin">Admin</NavLink> page.
+      </div>
       {error && <span className="error-msg">{error}</span>}
     </div>
   );
-};
+}
 
 //  bootstrap classes - AddProducts and productImgHandler

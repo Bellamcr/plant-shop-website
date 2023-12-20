@@ -1,7 +1,7 @@
 import "./css/cart.css";
 import React, { useContext, useEffect } from "react";
 import { CartContext } from "./CartContext";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { firebaseAuth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
