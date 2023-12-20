@@ -39,7 +39,7 @@ export default function Navbar() {
             <>
               <img
                 className="cart"
-                title="ShoppingCart"
+                title="Shopping Cart"
                 src={cart}
                 alt="Shopping Cart"
                 onClick={() => navigate("/cart")}
@@ -50,7 +50,7 @@ export default function Navbar() {
             <>
               <img
                 className="cart"
-                title="ShoppingCart"
+                title="Shopping Cart"
                 src={cart}
                 alt="Shopping Cart"
                 onClick={() => navigate("/cart")}

@@ -25,7 +25,7 @@ export default function Cart() {
           <>
             <div>
               No items in your cart or slow internet causing trouble, refresh
-              the page or return to <NavLink to="/shop">Shop page</NavLink>
+              the page or return to <NavLink to="/shop">Shop</NavLink> page.
             </div>
           </>
         )}

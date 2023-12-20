@@ -18,9 +18,13 @@ export default function Home() {
       <div className="grid">
         <div className="container">
           <img src={greenhouse} alt="plants" class="photo1" />
-          <button className="photobutton" onClick={() => navigate("/shop")}>
+          <button
+            title="Shop page"
+            className="photobutton"
+            onClick={() => navigate("/shop")}
+          >
             Find the right plant for you!
-          </button>{" "}
+          </button>
         </div>
         <p className="text1">
           Plants in your home or office can make you feel more comfortable,
