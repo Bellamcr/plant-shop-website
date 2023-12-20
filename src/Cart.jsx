@@ -24,11 +24,8 @@ export default function Cart() {
         {shoppingCart.length === 0 && (
           <>
             <div>
-              No items in your cart or slow internet causing trouble (Refresh
-              the page) or you are not logged in
-            </div>
-            <div>
-              <NavLink to="/shop">Return to Shop page</NavLink>
+              No items in your cart or slow internet causing trouble, refresh
+              the page or return to <NavLink to="/shop">Shop page</NavLink>
             </div>
           </>
         )}
@@ -63,7 +60,7 @@ export default function Cart() {
               </div>
 
               <div className="quantity">
-              <button
+                <button
                   className="qty-btn"
                   onClick={() =>
                     dispatch({
@@ -88,12 +85,10 @@ export default function Cart() {
                 >
                   +
                 </button>
-
-                
               </div>
 
               <div className="cart-price">
-                C$ {Math.round(product.ProductPrice * product.qty * 100)/100}
+                C$ {Math.round(product.ProductPrice * product.qty * 100) / 100}
               </div>
             </div>
           ))}
@@ -102,16 +97,14 @@ export default function Cart() {
             <div className="cart-summary-heading">Cart-Summary</div>
             <div className="cart-summary-price">
               <span>Total Price: C$ </span>
-              <span>{Math.round(totalPrice * 100)/100}</span>
+              <span>{Math.round(totalPrice * 100) / 100}</span>
             </div>
             <div className="cart-summary-price">
               <span>Total Qty: </span>
               <span>{totalQty}</span>
             </div>
             <NavLink to="cashout" className="cashout-link">
-              <button className="cashout">
-                Cash on delivery
-              </button>
+              <button className="cashout">Cash on delivery</button>
             </NavLink>
           </div>
         )}
